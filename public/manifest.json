@@ -1,0 +1,45 @@
+{
+  "short_name": "Sierra Zulu SPL",
+  "name": "Aviation Sierra Zulu - Egzamin SPL",
+  "description": "Profesjonalny system egzaminacyjny do licencji szybowcowej SPL z bazą pytań i analizą AI.",
+  "icons": [
+    {
+      "src": "icon-192.png",
+      "type": "image/png",
+      "sizes": "192x192",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icon-512.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "any maskable"
+    }
+  ],
+  "id": "/",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "theme_color": "#0f172a",
+  "background_color": "#0f172a",
+  "orientation": "portrait",
+  "categories": ["education", "aviation", "productivity"],
+  "lang": "pl",
+  "dir": "ltr",
+  "screenshots": [
+    {
+      "src": "screenshot-wide.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "Ekran główny aplikacji"
+    },
+    {
+      "src": "screenshot-mobile.png",
+      "sizes": "720x1280",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "Tryb egzaminu na telefonie"
+    }
+  ]
+}

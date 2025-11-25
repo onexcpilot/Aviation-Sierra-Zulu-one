@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Przykład Zdjęcia w Pytaniu</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-200 min-h-screen p-4 flex flex-col items-center gap-8 font-sans">
+
+    <!-- PRZYKŁAD 1: Zdjęcie "wtopione" w tekst (float) -->
+    <!-- Dobre na desktop, na mobile może być ciasno -->
+    <div class="w-full max-w-lg bg-white rounded-xl shadow-lg p-6">
+        <div class="mb-2 text-xs font-bold text-slate-400 uppercase tracking-wider">Przykład 1: Text Wrapping (Float)</div>
+        
+        <h2 class="text-xl font-bold text-slate-800 mb-4">Pytanie OPS-009</h2>
+        
+        <div class="text-slate-700 text-lg leading-relaxed">
+            <!-- Tuta jest zdjęcie. Klasy 'float-right' i 'ml-4' robią robotę -->
+            <img 
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/Landing_T.svg/1200px-Landing_T.svg.png" 
+                alt="Znak T" 
+                class="float-right w-24 h-auto ml-4 mb-2 border border-slate-200 rounded-lg p-1 bg-white shadow-sm"
+            >
+            <p>
+                Znak "T" widoczny na polu sygnałów (przedstawiony na obrazku obok) oznacza kierunek lądowania i startu. 
+                W jakiej relacji do tego znaku należy wykonywać te manewry zgodnie z procedurami lotniskowymi?
+            </p>
+            <!-- Czyścimy float, żeby odpowiedzi nie wjechały obok zdjęcia -->
+            <div class="clear-both"></div>
+        </div>
+
+        <div class="mt-6 space-y-3">
+            <button class="w-full text-left p-4 rounded-lg border-2 border-slate-100 hover:border-sky-500 hover:bg-sky-50 transition-colors">
+                A. Równolegle do trzonu, w stronę poprzeczki
+            </button>
+            <button class="w-full text-left p-4 rounded-lg border-2 border-slate-100 hover:border-sky-500 hover:bg-sky-50 transition-colors">
+                B. Prostopadle do trzonu
+            </button>
+        </div>
+    </div>
+
+    <!-- PRZYKŁAD 2: Zdjęcie jako blok pod tekstem -->
+    <!-- Najbezpieczniejsze na telefony (RWD) -->
+    <div class="w-full max-w-lg bg-white rounded-xl shadow-lg p-6">
+        <div class="mb-2 text-xs font-bold text-slate-400 uppercase tracking-wider">Przykład 2: Block (Bezpieczny RWD)</div>
+        
+        <h2 class="text-xl font-bold text-slate-800 mb-2">Pytanie MET-004</h2>
+        
+        <p class="text-slate-700 text-lg mb-4">
+            Jaki rodzaj chmury przedstawia poniższa fotografia i jakie zjawiska są z nią związane?
+        </p>
+
+        <!-- Kontener na zdjęcie -->
+        <div class="flex justify-center mb-6">
+            <img 
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Cumulonimbus_cloud.jpg/640px-Cumulonimbus_cloud.jpg" 
+                alt="Chmura" 
+                class="h-40 w-auto rounded-lg shadow-md object-cover"
+            >
+        </div>
+
+        <div class="space-y-3">
+            <button class="w-full text-left p-4 rounded-lg border-2 border-slate-100 hover:border-sky-500 hover:bg-sky-50 transition-colors">
+                A. Cumulus Humilis - słaba termika
+            </button>
+            <button class="w-full text-left p-4 rounded-lg border-2 border-slate-100 hover:border-sky-500 hover:bg-sky-50 transition-colors">
+                B. Cumulonimbus - burze i silne prądy
+            </button>
+        </div>
+    </div>
+
+</body>
+</html>

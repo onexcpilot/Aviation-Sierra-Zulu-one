@@ -1,0 +1,15 @@
+[
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls",
+      "delegate_permission/common.get_login_creds"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "pl.waw.sierrazulu.twa",
+      "sha256_cert_fingerprints": [
+        "61:F2:C3:A8:39:6D:12:F5:1B:EF:FA:78:F5:69:99:A7:CD:25:2B:94:99:35:1D:61:C1:34:54:C0:68:B9:A0:D9"
+      ]
+    }
+  }
+]
