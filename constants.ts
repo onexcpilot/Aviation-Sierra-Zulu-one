@@ -1,5 +1,3 @@
-
-
 import { Category, Question, Language } from './types';
 
 export const UI_TEXT = {
@@ -10,18 +8,18 @@ export const UI_TEXT = {
     passLabel: "Nazwisko (Hasło)",
     emailLabel: "Email",
     adminHint: "Wpisz 'Admin' dla panelu operatora",
-    startBtn: "Rozpocznij / Zaloguj",
+    startBtn: "Rozpocznij Egzamin",
     historyBtn: "Moja Historia",
     coffeeBtn: "Postaw mi kawę (2€)",
     adminLoginInfo: "Wpisz swoje Imię i Nazwisko oraz Email, aby zacząć test",
     
     // Exam
-    examTitle: "Egzamin SPL",
+    examTitle: "Egzamin Teoretyczny SPL (ULC)",
     question: "Pytanie",
     filled: "Wypełniono",
     nextBtn: "Dalej",
     prevBtn: "Poprzednie",
-    finishBtn: "Zakończ",
+    finishBtn: "Zakończ Egzamin",
     mapLabel: "Mapa pytań:",
     
     // Modal
@@ -38,12 +36,12 @@ export const UI_TEXT = {
     yourScore: "Twój wynik",
     analysisTitle: "Analiza Błędów",
     downloadPdf: "Pobierz Raport PDF",
-    noErrors: "Gratulacje! Brak błędów.",
+    noErrors: "Gratulacje! Brak błędów. Jesteś gotowy do egzaminu państwowego.",
     yourAns: "Twoja odpowiedź:",
     correctAns: "Poprawna odpowiedź:",
     askAi: "Zapytaj AI dlaczego",
-    aiInstructor: "AI Instruktor:",
-    exitBtn: "Wyjdź",
+    aiInstructor: "Instruktor AI:",
+    exitBtn: "Wróć do ekranu głównego",
 
     // Admin
     adminPanel: "Panel Operatora ASZ",
@@ -81,13 +79,13 @@ export const UI_TEXT = {
     passLabel: "Last Name (Password)",
     emailLabel: "Email",
     adminHint: "Type 'Admin' for operator panel",
-    startBtn: "Start / Login",
+    startBtn: "Start Exam",
     historyBtn: "My History",
     coffeeBtn: "Send me coffee (2€)",
     adminLoginInfo: "Enter your First Name, Last Name and Email to start the test",
     
     // Exam
-    examTitle: "SPL Exam",
+    examTitle: "SPL Exam (ULC/EASA)",
     question: "Question",
     filled: "Filled",
     nextBtn: "Next",
@@ -167,8 +165,8 @@ export const MOCK_DATABASE: Question[] = [
     {
         id: "law-003",
         category: Category.AIR_LAW,
-        text: "Sygnał świetlny 'Czerwona rakieta' wystrzelona z ziemi oznacza:",
-        options: ["Nie ląduj, mimo wcześniejszych zezwoleń (niebezpieczeństwo)", "Ląduj natychmiast", "Wróć na lotnisko", "Zgoda na start"],
+        text: "Sygnał świetlny 'Seria czerwonych błysków' wystrzelona z ziemi do statku w locie oznacza:",
+        options: ["Lotnisko niebezpieczne, nie ląduj", "Ląduj natychmiast", "Wróć na lotnisko", "Mimo wcześniejszych instrukcji nie ląduj na razie"],
         correctAnswerIndex: 0
     },
     {
@@ -209,8 +207,8 @@ export const MOCK_DATABASE: Question[] = [
     {
         id: "law-009",
         category: Category.AIR_LAW,
-        text: "W przestrzeni klasy G, dla lotów VFR powyżej FL 100, widzialność w locie musi wynosić co najmniej:",
-        options: ["8 km", "5 km", "1.5 km", "10 km"],
+        text: "W przestrzeni klasy G, dla lotów VFR poniżej 3000 ft AMSL, widzialność w locie musi wynosić co najmniej:",
+        options: ["1.5 km (dla prędkości pozwalającej na uniknięcie kolizji)", "5 km", "8 km", "10 km"],
         correctAnswerIndex: 0
     },
     {
@@ -245,21 +243,49 @@ export const MOCK_DATABASE: Question[] = [
         id: "law-014",
         category: Category.AIR_LAW,
         text: "Szybowiec lądujący przymusowo w terenie przygodnym:",
-        options: ["Ma pierwszeństwo przed wszystkimi innymi statkami powietrznymi", "Musi ustąpić samolotom silnikowym", "Ma pierwszeństwo tylko przed balonami", "Nie ma żadnych praw"],
+        options: ["Ma pierwszeństwo przed wszystkimi innymi statkami powietrznymi w powietrzu i na ziemi", "Musi ustąpić samolotom silnikowym", "Ma pierwszeństwo tylko przed balonami", "Nie ma żadnych praw"],
         correctAnswerIndex: 0
     },
     {
         id: "law-015",
         category: Category.AIR_LAW,
         text: "Loty VFR w nocy w Polsce:",
-        options: ["Są dozwolone pod warunkiem złożenia planu lotu i zachowania łączności", "Są całkowicie zabronione dla szybowców", "Nie wymagają planu lotu", "Są dozwolone tylko w strefach kontrolowanych"],
+        options: ["Są dozwolone pod warunkiem złożenia planu lotu i zachowania łączności (przepisy VFR Noc)", "Są całkowicie zabronione dla szybowców", "Nie wymagają planu lotu", "Są dozwolone tylko w strefach kontrolowanych"],
         correctAnswerIndex: 0
     },
     {
         id: "law-016",
         category: Category.AIR_LAW,
-        text: "Minimalna wysokość lotu nad parkami narodowymi w Polsce wynosi:",
-        options: ["1000m (3300 ft) AGL", "500m AGL", "2000 ft AMSL", "Nie ma ograniczeń"],
+        text: "Statek powietrzny wykonujący lot VFR wlot w strefę CTR (Controlled Traffic Region) musi:",
+        options: ["Uzyskać zezwolenie kontroli ruchu lotniczego (TWR) przed wlotem", "Tylko zgłosić wlot", "Nie musi nic robić, jeśli leci poniżej 1000ft", "Może wlecieć, jeśli pogoda jest dobra"],
+        correctAnswerIndex: 0
+    },
+    {
+        id: "law-017",
+        category: Category.AIR_LAW,
+        text: "Jaki dokument jest wymagany na pokładzie szybowca podczas lotu w rejonie lotniska?",
+        options: ["Świadectwo zdatności do lotu (ARC) lub jego kopia", "Książka pilota", "Ubezpieczenie OC w oryginale", "Tylko mapa"],
+        correctAnswerIndex: 0
+    },
+    {
+        id: "law-018",
+        category: Category.AIR_LAW,
+        text: "Licencja SPL wydawana jest na czas:",
+        options: ["Nieokreślony (z zastrzeżeniem utrzymania bieżącej praktyki)", "5 lat", "10 lat", "2 lata"],
+        correctAnswerIndex: 0
+    },
+    {
+        id: "law-019",
+        category: Category.AIR_LAW,
+        text: "W przypadku spotkania balonu i szybowca, pierwszeństwo ma:",
+        options: ["Balon (mniej sterowny)", "Szybowiec", "Statek z prawej strony", "Statek wyżej"],
+        correctAnswerIndex: 0
+    },
+    {
+        id: "law-020",
+        category: Category.AIR_LAW,
+        text: "Światło stałe czerwone z wieży do statku w locie oznacza:",
+        options: ["Nie ląduj, ustąp pierwszeństwa innym", "Ląduj, lotnisko bezpieczne", "Wróć na lotnisko", "Lotnisko zamknięte"],
         correctAnswerIndex: 0
     },
 
@@ -275,7 +301,7 @@ export const MOCK_DATABASE: Question[] = [
         id: "hum-002",
         category: Category.HUMAN_PERFORMANCE,
         text: "Barotrauma ucha środkowego występuje najczęściej podczas:",
-        options: ["Szybkiego zniżania (zwiększanie ciśnienia na zewnątrz)", "Wznoszenia", "Lotu poziomego", "Zakrętów"],
+        options: ["Szybkiego zniżania (zwiększanie ciśnienia na zewnątrz, problem z wyrównaniem)", "Wznoszenia", "Lotu poziomego", "Zakrętów"],
         correctAnswerIndex: 0
     },
     {
@@ -316,8 +342,8 @@ export const MOCK_DATABASE: Question[] = [
     {
         id: "hum-008",
         category: Category.HUMAN_PERFORMANCE,
-        text: "Zatrucie tlenkiem węgla (CO) charakteryzuje się:",
-        options: ["Brakiem zapachu gazu i podstępnym działaniem (senność, ból głowy)", "Ostrym zapachem", "Natychmiastową utratą przytomności", "Sinieniem kończyn"],
+        text: "Objawy niedotlenienia (hipoksji) na wysokości mogą obejmować:",
+        options: ["Euforię, upośledzenie oceny sytuacji, sinicę paznokci", "Ostry ból ucha", "Ból stawów", "Nadmierną potliwość"],
         correctAnswerIndex: 0
     },
     {
@@ -330,8 +356,8 @@ export const MOCK_DATABASE: Question[] = [
     {
         id: "hum-010",
         category: Category.HUMAN_PERFORMANCE,
-        text: "Eustres to:",
-        options: ["Stres pozytywny, mobilizujący do działania", "Stres paraliżujący", "Brak stresu", "Choroba psychiczna"],
+        text: "Zasada 'IM SAFE' służy do:",
+        options: ["Oceny zdolności pilota do lotu (Illness, Medication, Stress, Alcohol, Fatigue, Eating)", "Sprawdzania szybowca", "Planowania trasy", "Komunikacji radiowej"],
         correctAnswerIndex: 0
     },
     {
@@ -361,7 +387,7 @@ export const MOCK_DATABASE: Question[] = [
         id: "met-002",
         category: Category.METEOROLOGY,
         text: "Wiatr przy powierzchni ziemi w porównaniu do wiatru gradientowego (na wysokości 2000ft) jest:",
-        options: ["Słabszy i skręcony w lewo (na półkuli północnej - tarcie)", "Silniejszy i skręcony w prawo", "Taki sam", "Słabszy i skręcony w prawo"],
+        options: ["Słabszy i skręcony w lewo (na półkuli północnej - siła tarcia)", "Silniejszy i skręcony w prawo", "Taki sam", "Słabszy i skręcony w prawo"],
         correctAnswerIndex: 0
     },
     {
@@ -402,8 +428,8 @@ export const MOCK_DATABASE: Question[] = [
     {
         id: "met-008",
         category: Category.METEOROLOGY,
-        text: "Mgła adwekcyjna powstaje, gdy:",
-        options: ["Wilgotne i ciepłe powietrze napływa nad chłodne podłoże", "W nocy następuje wypromieniowanie ciepła", "Zimne powietrze spływa do doliny", "Pada deszcz"],
+        text: "Mgła radiacyjna powstaje najczęściej:",
+        options: ["W bezchmurne noce przy słabym wietrze (wypromieniowanie ciepła)", "Przy silnym wietrze", "W dzień", "Nad morzem"],
         correctAnswerIndex: 0
     },
     {
@@ -431,14 +457,14 @@ export const MOCK_DATABASE: Question[] = [
         id: "met-012",
         category: Category.METEOROLOGY,
         text: "Najbardziej niebezpiecznym rodzajem oblodzenia jest:",
-        options: ["Lód szklisty (clear ice)", "Szadź (rime ice)", "Szron", "Lód mieszany"],
+        options: ["Lód szklisty (clear ice) - szybki przyrost, zmiana profilu", "Szadź (rime ice)", "Szron", "Lód mieszany"],
         correctAnswerIndex: 0
     },
     {
         id: "met-013",
         category: Category.METEOROLOGY,
-        text: "METAR to depesza:",
-        options: ["O rzeczywistych warunkach pogodowych na lotnisku (obserwacja)", "Prognoza dla lotniska (TAF)", "Ostrzeżenie o zjawiskach niebezpiecznych (SIGMET)", "Prognoza obszarowa (GAMET)"],
+        text: "SIGMET to informacja o:",
+        options: ["Występowaniu lub przewidywaniu zjawisk pogody niebezpiecznych dla lotnictwa", "Prognozie dla lotniska", "Warunkach rzeczywistych", "Wietrze górnym"],
         correctAnswerIndex: 0
     },
     {
@@ -453,6 +479,13 @@ export const MOCK_DATABASE: Question[] = [
         category: Category.METEOROLOGY,
         text: "Skrót 'CAVOK' w depeszy METAR oznacza m.in.:",
         options: ["Widzialność ≥ 10 km, brak chmur poniżej 5000ft, brak zjawisk istotnych (np. CB)", "Widzialność 5 km", "Niebo zachmurzone", "Lotnisko zamknięte"],
+        correctAnswerIndex: 0
+    },
+    {
+        id: "met-016",
+        category: Category.METEOROLOGY,
+        text: "Turbulencja czystego nieba (CAT) występuje najczęściej:",
+        options: ["W pobliżu prądów strumieniowych (Jet Stream)", "W chmurach Stratus", "Przy ziemi", "W inwersji"],
         correctAnswerIndex: 0
     },
 
@@ -521,7 +554,7 @@ export const MOCK_DATABASE: Question[] = [
         correctAnswerIndex: 0
     },
     {
-        id: "com-010",
+        id: "com-10",
         category: Category.COMMUNICATIONS,
         text: "Znak wywoławczy 'GROUND' odnosi się do:",
         options: ["Kontroli ruchu naziemnego", "Wieży", "Zbliżania", "Informacji"],
@@ -532,6 +565,13 @@ export const MOCK_DATABASE: Question[] = [
         category: Category.COMMUNICATIONS,
         text: "Przycisk PTT (Push to Talk) należy wcisnąć:",
         options: ["Chwilę przed rozpoczęciem mówienia i zwolnić chwilę po zakończeniu", "Po rozpoczęciu mówienia", "Tylko w sytuacjach awaryjnych", "Cały czas trzymać wciśnięty"],
+        correctAnswerIndex: 0
+    },
+    {
+        id: "com-012",
+        category: Category.COMMUNICATIONS,
+        text: "Fraza 'SAY AGAIN' oznacza:",
+        options: ["Powtórz całą lub część ostatniej wiadomości", "Powiedz jeszcze raz swoje imię", "Nic nie słyszę", "Zmień częstotliwość"],
         correctAnswerIndex: 0
     },
 
@@ -647,7 +687,7 @@ export const MOCK_DATABASE: Question[] = [
         id: "ops-004",
         category: Category.OPERATIONAL_PROCEDURES,
         text: "Sygnał dawany przez pilota szybowca 'Kierunek w lewo' (podczas holu) to:",
-        options: ["Nieregularne wychylenia szybowca w lewo", "Mruganie światłami", "Otwarcie hamulców", "Machanie skrzydłami"],
+        options: ["Nieregularne wychylenia szybowca w lewo (wyjście z cienia aerodynamicznego)", "Mruganie światłami", "Otwarcie hamulców", "Machanie skrzydłami"],
         correctAnswerIndex: 0
     },
     {
@@ -703,7 +743,7 @@ export const MOCK_DATABASE: Question[] = [
         id: "ops-012",
         category: Category.OPERATIONAL_PROCEDURES,
         text: "Żółty krzyż wyłożony na polu sygnałów oznacza:",
-        options: ["Zakaz lądowania", "Lądowanie z ostrożnością", "Szybowce lądują na pasie trawiastym", "Lotnisko wojskowe"],
+        options: ["Zakaz lądowania (lotnisko niesprawne)", "Lądowanie z ostrożnością", "Szybowce lądują na pasie trawiastym", "Lotnisko wojskowe"],
         correctAnswerIndex: 0
     },
     {
@@ -711,6 +751,20 @@ export const MOCK_DATABASE: Question[] = [
         category: Category.OPERATIONAL_PROCEDURES,
         text: "Dwie czerwone strzały wyłożone na polu sygnałów oznaczają:",
         options: ["Nakaz lądowania i startu w kierunku wskazanym przez strzały (standardowy krąg lewy jeśli nie ma strzał, prawy jeśli są strzały w prawo)", "Zakaz kołowania", "Pas startowy zamknięty", "Strefa spadochronowa"],
+        correctAnswerIndex: 0
+    },
+    {
+        id: "ops-014",
+        category: Category.OPERATIONAL_PROCEDURES,
+        text: "Podczas startu za wyciągarką, jeśli szybowiec zaczyna odchylać się w lewo, pilot powinien:",
+        options: ["Wyczepić linę natychmiast, jeśli kontrowanie sterem nie pomaga", "Zwiększyć kąt wznoszenia", "Wychylić drążek w prawo i kontynuować", "Krzyczeć przez radio"],
+        correctAnswerIndex: 0
+    },
+    {
+        id: "ops-015",
+        category: Category.OPERATIONAL_PROCEDURES,
+        text: "Białe 'Hantle' na polu sygnałów oznaczają:",
+        options: ["Lądowanie i start wyłącznie z drogi utwardzonej (pas betonowy/asfaltowy)", "Zakaz lotów", "Szybowce lądują na trawę", "Strefa ćwiczeń"],
         correctAnswerIndex: 0
     },
 
@@ -783,6 +837,13 @@ export const MOCK_DATABASE: Question[] = [
         category: Category.FLIGHT_PERFORMANCE,
         text: "Wzrost temperatury powietrza (przy tym samym ciśnieniu) powoduje:",
         options: ["Spadek gęstości powietrza i pogorszenie osiągów startowych", "Wzrost gęstości", "Poprawę noszenia", "Krótszy rozbieg"],
+        correctAnswerIndex: 0
+    },
+    {
+        id: "perf-011",
+        category: Category.FLIGHT_PERFORMANCE,
+        text: "Najmniejsza prędkość opadania występuje przy prędkości:",
+        options: ["Ekonomicznej (mniejszej niż optymalna)", "Optymalnej", "Maksymalnej", "Minimalnej"],
         correctAnswerIndex: 0
     },
 
@@ -925,7 +986,7 @@ export const MOCK_DATABASE: Question[] = [
     {
         id: "nav-010",
         category: Category.NAVIGATION,
-        text: "Loxodroma to linia przecinająca południki:",
+        text: "Loksodroma to linia przecinająca południki:",
         options: ["Pod tym samym kątem", "Pod różnymi kątami", "Zawsze prostopadle", "Zawsze równolegle"],
         correctAnswerIndex: 0
     },
@@ -941,6 +1002,20 @@ export const MOCK_DATABASE: Question[] = [
         category: Category.NAVIGATION,
         text: "Na mapie w rzucie Lamberta linia prosta jest przybliżeniem:",
         options: ["Ortodromy (najkrótsza droga)", "Loksodromy", "Równoleżnika", "Południka"],
+        correctAnswerIndex: 0
+    },
+    {
+        id: "nav-013",
+        category: Category.NAVIGATION,
+        text: "Jeżeli Słońce jest w najwyższym punkcie (południe słoneczne), wskazuje ono kierunek:",
+        options: ["Południowy (na półkuli północnej)", "Północny", "Wschodni", "Zachodni"],
+        correctAnswerIndex: 0
+    },
+    {
+        id: "nav-014",
+        category: Category.NAVIGATION,
+        text: "Ostatnia poprawka w nawigacji: KD (Kąt Drogi) +/- PZ (Poprawka Znoszenia) daje:",
+        options: ["KR (Kurs Rzeczywisty)", "KB (Kurs Busoli)", "KM (Kurs Magnetyczny)", "GS (Prędkość)"],
         correctAnswerIndex: 0
     }
 ];
