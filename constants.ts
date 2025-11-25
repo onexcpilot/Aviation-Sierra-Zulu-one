@@ -1,4 +1,5 @@
 
+
 import { Category, Question, Language } from './types';
 
 export const UI_TEXT = {
@@ -233,6 +234,34 @@ export const MOCK_DATABASE: Question[] = [
         options: ["Aerodrome Traffic Zone (Strefa ruchu lotniskowego)", "Air Traffic Zone", "Airport Terminal Zone", "Area Traffic Zone"],
         correctAnswerIndex: 0
     },
+    {
+        id: "law-013",
+        category: Category.AIR_LAW,
+        text: "Kto odpowiada za bezpieczeństwo statku powietrznego podczas lotu?",
+        options: ["Dowódca statku powietrznego", "Właściciel statku", "Służba ruchu lotniczego", "Szef wyszkolenia"],
+        correctAnswerIndex: 0
+    },
+    {
+        id: "law-014",
+        category: Category.AIR_LAW,
+        text: "Szybowiec lądujący przymusowo w terenie przygodnym:",
+        options: ["Ma pierwszeństwo przed wszystkimi innymi statkami powietrznymi", "Musi ustąpić samolotom silnikowym", "Ma pierwszeństwo tylko przed balonami", "Nie ma żadnych praw"],
+        correctAnswerIndex: 0
+    },
+    {
+        id: "law-015",
+        category: Category.AIR_LAW,
+        text: "Loty VFR w nocy w Polsce:",
+        options: ["Są dozwolone pod warunkiem złożenia planu lotu i zachowania łączności", "Są całkowicie zabronione dla szybowców", "Nie wymagają planu lotu", "Są dozwolone tylko w strefach kontrolowanych"],
+        correctAnswerIndex: 0
+    },
+    {
+        id: "law-016",
+        category: Category.AIR_LAW,
+        text: "Minimalna wysokość lotu nad parkami narodowymi w Polsce wynosi:",
+        options: ["1000m (3300 ft) AGL", "500m AGL", "2000 ft AMSL", "Nie ma ograniczeń"],
+        correctAnswerIndex: 0
+    },
 
     // --- 2. HUMAN PERFORMANCE (Człowiek) ---
     {
@@ -310,6 +339,13 @@ export const MOCK_DATABASE: Question[] = [
         category: Category.HUMAN_PERFORMANCE,
         text: "Złudzenie, że statek powietrzny znajduje się wyżej niż w rzeczywistości podczas podejścia, może być wywołane przez:",
         options: ["Wąski pas startowy lub teren wznoszący się przed pasem", "Szeroki pas startowy", "Lot nad wodą", "Mgłę"],
+        correctAnswerIndex: 0
+    },
+    {
+        id: "hum-012",
+        category: Category.HUMAN_PERFORMANCE,
+        text: "Najlepszym sposobem na skanowanie przestrzeni (wzrok) jest:",
+        options: ["Sektorowe przesuwanie wzroku co 10-15 stopni i zatrzymywanie go na chwilę", "Ciągły ruch oczami", "Patrzenie w jeden punkt na horyzoncie", "Skupienie wzroku na przyrządach"],
         correctAnswerIndex: 0
     },
 
@@ -405,6 +441,20 @@ export const MOCK_DATABASE: Question[] = [
         options: ["O rzeczywistych warunkach pogodowych na lotnisku (obserwacja)", "Prognoza dla lotniska (TAF)", "Ostrzeżenie o zjawiskach niebezpiecznych (SIGMET)", "Prognoza obszarowa (GAMET)"],
         correctAnswerIndex: 0
     },
+    {
+        id: "met-014",
+        category: Category.METEOROLOGY,
+        text: "Punkt rosy to temperatura, w której:",
+        options: ["Powietrze staje się nasycone parą wodną (wilgotność 100%)", "Woda zamarza", "Powietrze osiąga największą gęstość", "Zaczyna padać śnieg"],
+        correctAnswerIndex: 0
+    },
+    {
+        id: "met-015",
+        category: Category.METEOROLOGY,
+        text: "Skrót 'CAVOK' w depeszy METAR oznacza m.in.:",
+        options: ["Widzialność ≥ 10 km, brak chmur poniżej 5000ft, brak zjawisk istotnych (np. CB)", "Widzialność 5 km", "Niebo zachmurzone", "Lotnisko zamknięte"],
+        correctAnswerIndex: 0
+    },
 
     // --- 4. COMMUNICATIONS (Łączność) ---
     {
@@ -475,6 +525,13 @@ export const MOCK_DATABASE: Question[] = [
         category: Category.COMMUNICATIONS,
         text: "Znak wywoławczy 'GROUND' odnosi się do:",
         options: ["Kontroli ruchu naziemnego", "Wieży", "Zbliżania", "Informacji"],
+        correctAnswerIndex: 0
+    },
+    {
+        id: "com-011",
+        category: Category.COMMUNICATIONS,
+        text: "Przycisk PTT (Push to Talk) należy wcisnąć:",
+        options: ["Chwilę przed rozpoczęciem mówienia i zwolnić chwilę po zakończeniu", "Po rozpoczęciu mówienia", "Tylko w sytuacjach awaryjnych", "Cały czas trzymać wciśnięty"],
         correctAnswerIndex: 0
     },
 
@@ -556,6 +613,13 @@ export const MOCK_DATABASE: Question[] = [
         options: ["Szybowiec 'wyślizguje się' na zewnątrz zakrętu (za duży przechył względem prędkości kątowej)", "Szybowiec wpada do środka zakrętu", "Sterowność jest najlepsza", "Opór jest najmniejszy"],
         correctAnswerIndex: 0
     },
+    {
+        id: "pof-012",
+        category: Category.PRINCIPLES_OF_FLIGHT,
+        text: "Jak zmieni się prędkość przeciągnięcia przy zakręcie o przechyleniu 45 stopni?",
+        options: ["Wzrośnie o około 19%", "Pozostanie bez zmian", "Zmaleje", "Wzrośnie dwukrotnie"],
+        correctAnswerIndex: 0
+    },
 
     // --- 6. OPERATIONAL PROCEDURES (Procedury) ---
     {
@@ -626,6 +690,27 @@ export const MOCK_DATABASE: Question[] = [
         category: Category.OPERATIONAL_PROCEDURES,
         text: "Krytycznym momentem startu za wyciągarką (największe kąty natarcia) jest:",
         options: ["Faza wznoszenia na pełnej linie (ok. 1/3 wysokości)", "Rozbieg", "Wyczepienie", "Końcówka holu"],
+        correctAnswerIndex: 0
+    },
+    {
+        id: "ops-011",
+        category: Category.OPERATIONAL_PROCEDURES,
+        text: "Po wyczepieniu liny holowniczej, pierwszą czynnością pilota powinno być:",
+        options: ["Ustalenie prędkości lotu swobodnego i sprawdzenie, czy lina została wyczepiona", "Rozpoczęcie krążenia", "Włączenie radia", "Zamknięcie podwozia"],
+        correctAnswerIndex: 0
+    },
+    {
+        id: "ops-012",
+        category: Category.OPERATIONAL_PROCEDURES,
+        text: "Żółty krzyż wyłożony na polu sygnałów oznacza:",
+        options: ["Zakaz lądowania", "Lądowanie z ostrożnością", "Szybowce lądują na pasie trawiastym", "Lotnisko wojskowe"],
+        correctAnswerIndex: 0
+    },
+    {
+        id: "ops-013",
+        category: Category.OPERATIONAL_PROCEDURES,
+        text: "Dwie czerwone strzały wyłożone na polu sygnałów oznaczają:",
+        options: ["Nakaz lądowania i startu w kierunku wskazanym przez strzały (standardowy krąg lewy jeśli nie ma strzał, prawy jeśli są strzały w prawo)", "Zakaz kołowania", "Pas startowy zamknięty", "Strefa spadochronowa"],
         correctAnswerIndex: 0
     },
 
@@ -849,6 +934,13 @@ export const MOCK_DATABASE: Question[] = [
         category: Category.NAVIGATION,
         text: "Wznoszenie 2 m/s to w przybliżeniu:",
         options: ["400 ft/min", "200 ft/min", "1000 ft/min", "100 ft/min"],
+        correctAnswerIndex: 0
+    },
+    {
+        id: "nav-012",
+        category: Category.NAVIGATION,
+        text: "Na mapie w rzucie Lamberta linia prosta jest przybliżeniem:",
+        options: ["Ortodromy (najkrótsza droga)", "Loksodromy", "Równoleżnika", "Południka"],
         correctAnswerIndex: 0
     }
 ];
